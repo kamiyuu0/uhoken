@@ -1,33 +1,43 @@
 <section class="max-w-4xl mt-20 p-6 mx-auto bg-white rounded-md shadow-md">
-    <h2 class="text-lg font-semibold text-gray-700 capitalize">第1問</h2>
+    <h2 class="text-lg font-semibold text-gray-700 capitalize">第<%= @id %>問</h2>
     <p  class="mt-8 text-sm text-black-500 sm:text-xl/8">
-        ゴリラの胸を叩く行動(ドラミング)には、主にどんな意味があるでしょう？
+        <%= @questions.dig('q') %>
     </p>
     <form>
         <div class="mt-4">
             <div class="mt-10 space-y-6">
                 <div class="flex items-center gap-x-3">
                     <input id="push-everything" name="push-notifications" type="radio" checked class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden">
-                    <label for="push-everything" class="block text-lg font-medium text-gray-900">恋愛のアピール</label>
+                    <label for="push-everything" class="block text-lg font-medium text-gray-900">
+                        <%= @questions.dig('choices').dig(1) %>
+                    </label>
                 </div>
                 <div class="flex items-center gap-x-3">
                     <input id="push-email" name="push-notifications" type="radio" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden">
-                    <label for="push-email" class="block text-lg font-medium text-gray-900">体温調整</label>
+                    <label for="push-email" class="block text-lg font-medium text-gray-900">
+                        <%= @questions.dig('choices').dig(2) %>
+                    </label>
                 </div>
                 <div class="flex items-center gap-x-3">
                     <input id="push-nothing" name="push-notifications" type="radio" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden">
-                    <label for="push-nothing" class="block text-lg font-medium text-gray-900">威嚇や存在誇示</label>
+                    <label for="push-nothing" class="block text-lg font-medium text-gray-900">
+                        <%= @questions.dig('choices').dig(3) %>
+                    </label>
                 </div>
                 <div class="flex items-center gap-x-3">
                     <input id="a4" name="push-notifications" type="radio" class="relative size-4 appearance-none rounded-full border border-gray-300 bg-white before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-600 checked:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:before:bg-gray-400 forced-colors:appearance-auto forced-colors:before:hidden">
-                    <label for="a4" class="block text-lg font-medium text-gray-900">狩りの開始合図</label>
+                    <label for="a4" class="block text-lg font-medium text-gray-900">
+                        <%= @questions.dig('choices').dig(4) %>
+                    </label>
                 </div>
             </div>
         </div>
         <div class="mt-10 flex items-center justify-center gap-x-6">
-            <button class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-yellow-900 rounded-lg hover:bg-yellow-600 focus:outline-none">
-                ウホッと叫んで次へ
-            </button>
+            <% if @id == 5 %>
+                <%= link_to 'ウホッと叫んで次へ', result_path, class: "px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-yellow-900 rounded-lg hover:bg-yellow-600 focus:outline-none" %>
+            <% else %>
+                <%= link_to 'ウホッと叫んで次へ', question_path(@id + 1), class: "px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-yellow-900 rounded-lg hover:bg-yellow-600 focus:outline-none" %>
+            <% end %>
         </div>
     </form>
 </section>
