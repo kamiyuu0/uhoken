@@ -1,14 +1,14 @@
 <div class="bg-white">
-    <div class="mx-auto sm:py-48 lg:py-28">
+    <div class="mx-auto">
       <div class="text-center">
         <div class="flex justify-center">
-            <%= image_tag "score0.png", size: '533x800' %>
+            <%= image_tag @result.dig('image'), size: '533x800' %>
         </div>
         <p class="mt-8 text-lg font-medium text-pretty text-black-500 sm:text-xl/8">
-            0点：迷子ゴリラ(ウホ迷い)
+            <%= @score %>点：<%= @result.dig('title') %>
         </p>
         <p  class="mt-8 text-lg font-medium text-pretty text-black-500 sm:text-xl/8">
-            森で道に迷って右往左往。目がぐるぐる、葉っぱまみれ。愛され系最弱キャラ。
+            <%= @result.dig('subtitle') %>
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-30">
             <a class="px-4 py-4 font-medium tracking-wide text-white lg:w-38 sm:w-20 capitalize transition-colors duration-300 transform bg-yellow-900 rounded-lg hover:bg-yellow-600 focus:outline-none" href="/question/show">
