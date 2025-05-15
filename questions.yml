@@ -47,25 +47,31 @@ questions:
 result:
   0:
     image: score0.png
+    ogp_image: score0_ogp.png
     title: 迷子ゴリラ（ウホ迷い）
     subtitle: 森で道に迷って右往左往。目がぐるぐる、葉っぱまみれ。愛され系最弱キャラ。
   1:
     image: score1.png
+    ogp_image: score1_ogp.png
     title: バナナ初心者ゴリラ
     subtitle: バナナを皮ごと食べようとしてるゴリラ。ちょっとドジだけどやる気はある。
   2:
     image: score2.png
+    ogp_image: score2_ogp.png
     title: 修行中ゴリラ
     subtitle: 木の上で瞑想中。知識も筋肉もまだ半分。表情は真剣。
   3:
     image: score3.png
+    ogp_image: score3_ogp.png
     title: やんちゃゴリラ
     subtitle: ちょっと力がついてきて、やんちゃできるようになったゴリラ。しゃくれがち。
   4:
     image: score4.png
+    ogp_image: score4_ogp.png
     title: シルバーバック候補生
     subtitle: スーツでビシッと気合いが入ったゴリラ。エリートらしい。
   5:
     image: score5.png
+    ogp_image: score5_ogp.png
     title: 真・シルバーバック（森の王）
     subtitle: 余裕さが違う。シルバーバック同士の争いも手を挙げるだけで止める。
