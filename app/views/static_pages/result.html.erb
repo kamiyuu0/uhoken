@@ -11,7 +11,7 @@
             <%= @result.dig('subtitle') %>
         </p>
         <div class="mt-10 flex items-center justify-center gap-x-30">
-            <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}&text=#{CGI.escape("うほ検定：#{@score}点でした。")}\n&hashtags=#{CGI.escape("うほ検定")}", target: "_blank", class:"px-4 py-4 font-medium tracking-wide text-white lg:w-38 sm:w-20 capitalize transition-colors duration-300 transform bg-yellow-900 rounded-lg hover:bg-yellow-600 focus:outline-none" do %>
+            <%= link_to "https://twitter.com/intent/tweet?url=#{root_url}/result/#{@score}&text=#{CGI.escape("うほ検定：#{@score}点でした。")}\n&hashtags=#{CGI.escape("うほ検定")}", target: "_blank", class:"px-4 py-4 font-medium tracking-wide text-white lg:w-38 sm:w-20 capitalize transition-colors duration-300 transform bg-yellow-900 rounded-lg hover:bg-yellow-600 focus:outline-none" do %>
                 Xシェア
             <% end %>
             <a class="px-4 py-4 font-medium tracking-wide text-white lg:w-38 sm:w-20 capitalize transition-colors duration-300 transform bg-yellow-900 rounded-lg hover:bg-yellow-600 focus:outline-none" href="/">
