@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
     @score = session[:result]
     @result = reaction_hash.dig('result')[@score]
     @image = ActionController::Base.helpers.asset_url("#{@result.dig('ogp_image')}", type: :image)
+    @image = "#{request.protocol}#{request.host}#{@image}"
     set_meta_tags(og: { image: @image }, twitter: { image: @image })
   end
 
