@@ -18,7 +18,7 @@ class QuestionController < ApplicationController
     end
 
     if @id == '5'
-      redirect_to result_path
+      redirect_to result_path(session[:result])
     else
       redirect_to question_path(@id.to_i + 1)
     end
