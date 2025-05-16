@@ -2,8 +2,8 @@ module ApplicationHelper
 
   def default_meta_tags(image = "ogp.png")
     {
-      site: "うほ検定",
-      title: "うほ検定",
+      # site: "うほ検定",
+      # title: "うほ検定",
       reverse: true,
       charset: "utf-8",
       description: "あなたの「ゴリラ的資質」を測定するサービス",
