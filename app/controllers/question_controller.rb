@@ -1,9 +1,9 @@
 class QuestionController < ApplicationController
-  require 'yaml'
+  require "yaml"
 
   def show
     @id = params[:id].to_i
-    @questions = reaction_hash.dig('questions')[@id - 1]
+    @questions = reaction_hash.dig("questions")[@id - 1]
     if @id == 1
       session[:result] = 0
     end
@@ -11,13 +11,13 @@ class QuestionController < ApplicationController
 
   def update
     @id = params[:id]
-    answer = reaction_hash.dig('questions')[@id.to_i - 1].dig('a')
+    answer = reaction_hash.dig("questions")[@id.to_i - 1].dig("a")
     choice = params[:choice].to_i
     if answer == choice
       session[:result] += 1
     end
 
-    if @id == '5'
+    if @id == "5"
       redirect_to result_path(session[:result])
     else
       redirect_to question_path(@id.to_i + 1)
@@ -29,5 +29,4 @@ class QuestionController < ApplicationController
   def reaction_hash
     YAML.load_file("questions.yml")
   end
-
 end
